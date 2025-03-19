@@ -4,7 +4,7 @@
 
 TEST(TComplex, can_create_Complex)
 {
-  ASSERT_NO_THROW(TComplex<int>, a(1, 1));
+  ASSERT_NO_THROW(TComplex<int> a(1, 1));
 }
 
 TEST(TComplex, can_create_Complex_copy)
