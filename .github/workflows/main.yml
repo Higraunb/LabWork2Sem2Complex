@@ -37,5 +37,5 @@ jobs:
           cmake ..
           make
           echo make complete
-          ./ComplexLib/ComplexApplication
+          ./ComplexMain/ComplexApplication
           ./ComplexTest/ComplexTest
