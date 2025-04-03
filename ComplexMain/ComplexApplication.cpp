@@ -1,5 +1,7 @@
 #include "HComplex.h"
 int main()
 {
-	TComplex <int> a;
+	TComplex <double> a(1873.0, 90.0);
+	a.TrigForm();
+	return 0;
 }
