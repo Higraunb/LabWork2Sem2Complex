@@ -1,10 +1,8 @@
 #pragma once
 #include <iostream>
-#define _USE_MATH_DEFINES
 #include <cmath>
+#include <complex.h>
 using namespace std;
-
-
 template <class T>
 class TComplex
 {
@@ -18,7 +16,6 @@ public:
 	void SetRe(T val);
 	void SetIm(T val);
 	T ComplexModule();
-	void TrigForm();
 	void Degree(double degree);
 	void ComplexDegree();
 	TComplex operator + (const TComplex<T>& val);
@@ -38,7 +35,7 @@ public:
 	template <class D>
 	friend istream& operator >> (istream& inp, TComplex<D>& val);
 	
-protected:
+private:
 	T real, imaginary;
 };
 
@@ -88,62 +85,16 @@ inline void TComplex<T>::SetIm(T val)
 template<class T>
 inline T TComplex<T>::ComplexModule()
 {
-	return (sqrt(real*real + imaginary*imaginary));
-}
-
-template<class T>
-inline void TComplex<T>::TrigForm()
-{
-	if ((imaginary == 0) && (real == 0))
-	{
-		cout << "(" << real << " + " << imaginary << " * i) = "
-			<< 0;
-	}
-	else if (real == 0)
-	{
-		cout << "(" << real << " + " << imaginary << " * i) = "
-			<< imaginary << " * i ";
-	}
-	else if (imaginary == 0)
-	{
-		cout << "(" << real << " + " << imaginary << " * i) = "
-			<< real;
-	}
-	else
-	{
-		T arg = abs((atan(real / imaginary) * 180) / 3.14);
-		if ((imaginary > 0) && (real > 0))
-		{
-			cout << "(" << real << " + " << imaginary << " * i) = "
-				<< ComplexModule() << " * " << "cos(" << arg << "+ 2pk) + sin("
-				<< arg << "+ 2pk) * i ";
-		}
-		else if ((imaginary > 0) && (real < 0))
-		{
-			cout << "(" << real << " + " << imaginary << " * i) = "
-				<< ComplexModule() << " * " << "cos(" << -arg << "+ 2pk) + sin("
-				<< -arg << "+ 2pk) * i ";
-		}
-		else if ((imaginary < 0) && (real > 0))
-		{
-			cout << "(" << real << " + " << imaginary << " * i) = "
-				<< ComplexModule() << " * " << "cos(" << 180 - arg << "+ 2pk) + sin("
-				<< 180 - arg << "+ 2pk) * i ";
-		}
-		else
-		{
-			cout << "(" << real << " + " << imaginary << " * i) = "
-				<< ComplexModule() << " * " << "cos(" << arg - 180 << "+ 2pk) + sin("
-				<< arg - 180 << "+ 2pk) * i ";
-		}
-	}
+	return sqrt(real*real + imaginary*imaginary);
 }
 
 template<class T>
 inline void TComplex<T>::Degree(double degree)
 {
 	double IntPart = 0;
-	double FracPart = 0;
+	double /*degree = 0,*/ FracPart = 0;
+	//cout << "Enter degree - ";
+	//cin >> degree;
 	FracPart = modf(degree, &IntPart);
 	if(FracPart == 0)
 	{
@@ -166,7 +117,7 @@ inline void TComplex<T>::Degree(double degree)
 			}
 			else
 			{
-				T arg = abs((atan(real / imaginary) * 180) / M_PI);
+				T arg = abs((atan(real / imaginary) * 180) / 3.14);
 				if ((imaginary > 0) && (real > 0))
 				{
 					cout << "(" << real << " + " << imaginary << " * i) ^ ( " << degree << " ) = "
@@ -619,6 +570,31 @@ template <class D>
 inline ostream& operator << (ostream& out, TComplex<D>& val)
 {
 	out << "Complex number = " << val.GetRe() << " + " << val.GetIm() << " * i " << endl;
+	/*T arg = abs((atan(val.real / val.imaginary) * 180) / 3.14);
+	if ((val.imaginary > 0) && (val.real > 0))
+	{
+		cout << "The trigonometric form of a complex number = "
+			<< val.ComplexModule() << " * " << "cos(" << arg << "+ 2pk) + sin(" 
+			<< arg << "+ 2pk) * i ";
+	}
+	else if ((val.imaginary > 0) && (val.real < 0))
+	{
+		cout << "The trigonometric form of a complex number = "
+			<< val.ComplexModule() << " * " << "cos(" << -arg << "+ 2pk) + sin("
+			<< -arg << "+ 2pk) * i ";
+	}
+	else if ((val.imaginary < 0) && (val.real > 0))
+	{
+		cout << "The trigonometric form of a complex number = "
+			<< val.ComplexModule() << " * " << "cos(" << 180 - arg << "+ 2pk) + sin("
+			<< 180 - arg << "+ 2pk) * i ";
+	}
+	else
+	{
+		cout << "The trigonometric form of a complex number = "
+			<< val.ComplexModule() << " * " << "cos(" << arg - 180 << "+ 2pk) + sin("
+			<< arg - 180 << "+ 2pk) * i ";
+	}*/
 	system("pause");
 	system("cls");
 	return out;
