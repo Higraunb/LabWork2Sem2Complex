@@ -74,12 +74,11 @@ TEST(TComplex, checking_the_operation_functionality_minus)
   EXPECT_NEAR(1, c == d, 0.00001);
 }
 
-//TEST(TComplex, checking_the_operation_functionality_equating)
-//{
-//  TComplex<double> b(2.0, 2.0), d(3.0, 4.0);
-//  d = b;
-//  EXPECT_EQ(d, b);
-//}
+TEST(TComplex, checking_the_operation_functionality_equating)
+{
+  TComplex<double> b(2.0, 2.0), d = b;
+  EXPECT_NEAR(1, b == d, 0.00001);
+}
 
 TEST(TComplex, checking_the_operation_functionality_multiplication)
 {
