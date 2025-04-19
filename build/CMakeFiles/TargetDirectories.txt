@@ -1,0 +1,6 @@
+C:/Users/Misha/Desktop/le/proga/LabWork2Sem2Complex/LabWork2Sem2Complex/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Misha/Desktop/le/proga/LabWork2Sem2Complex/LabWork2Sem2Complex/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Misha/Desktop/le/proga/LabWork2Sem2Complex/LabWork2Sem2Complex/build/ComplexLib/CMakeFiles/ComplexLibrary.dir
+C:/Users/Misha/Desktop/le/proga/LabWork2Sem2Complex/LabWork2Sem2Complex/build/ComplexMain/CMakeFiles/ComplexApplication.dir
+C:/Users/Misha/Desktop/le/proga/LabWork2Sem2Complex/LabWork2Sem2Complex/build/gtest/CMakeFiles/gtest.dir
+C:/Users/Misha/Desktop/le/proga/LabWork2Sem2Complex/LabWork2Sem2Complex/build/ComplexTest/CMakeFiles/ComplexTest.dir
